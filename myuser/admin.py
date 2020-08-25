@@ -4,4 +4,21 @@ from myuser.models import MyUser
 
 # Register your models here.
 
-admin.site.register(MyUser, UserAdmin)
+
+class CustomUserAdmin(UserAdmin):
+    fieldsets = (
+        *UserAdmin.fieldsets,
+        (
+            'Custom Field Heading',
+            {
+                'fields': (
+                    'age',
+                    'displayname',
+                    'homepage',
+                )
+            }
+        )
+    )
+
+
+admin.site.register(MyUser, CustomUserAdmin)

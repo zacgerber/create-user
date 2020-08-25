@@ -5,5 +5,15 @@ from django.db import models
 
 
 class MyUser(AbstractUser):
-    age = models.IntegerField(blank=True, null=True)
-    bio = models.TextField(blank=True, null=True)
+    displayname = models.CharField(max_length=80)
+    age = models.IntegerField(null=True)
+    homepage = models.URLField(null=True)
+
+    REQUIRED_FIELD = ['age', 'homepage']
+
+    def __str__(self):
+        return self.username
+
+
+
+
