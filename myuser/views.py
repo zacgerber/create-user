@@ -30,7 +30,7 @@ def signup_view(request):
         form = SignupForm(request.POST)
         if form.is_valid():
             data = form.cleaned_data
-            new_user= MyUser.objects.create_user(
+            new_user = MyUser.objects.create_user(
                 username=data.get("username"),
                 password=data.get("password"),
                 displayname=data.get("displayname")

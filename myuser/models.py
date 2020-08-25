@@ -7,9 +7,10 @@ from django.db import models
 class MyUser(AbstractUser):
     displayname = models.CharField(max_length=80)
     age = models.IntegerField(null=True)
-    homepage = models.URLField(null=True)
+    bio = models.TextField(blank=True, null=True)
+    homepage = models.URLField(blank=True, null=True)
 
-    REQUIRED_FIELD = ['age', 'homepage']
+    REQUIRED_FIELDS = ['age', 'homepage']
 
     def __str__(self):
         return self.username

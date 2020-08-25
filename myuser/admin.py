@@ -9,7 +9,7 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = (
         *UserAdmin.fieldsets,
         (
-            'Custom Field Heading',
+            'Custom Field Heading (extra credit)',
             {
                 'fields': (
                     'age',
